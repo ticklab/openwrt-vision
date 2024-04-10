@@ -1,0 +1,12 @@
+Index: zbar-0.1.0/Makefile.am
+===================================================================
+--- zbar-0.1.0.orig/Makefile.am
++++ zbar-0.1.0/Makefile.am
+@@ -45,7 +45,6 @@ if HAVE_NPAPI
+ include $(srcdir)/plugin/Makefile.am.inc
+ endif
+ include $(srcdir)/test/Makefile.am.inc
+-include $(srcdir)/doc/Makefile.am.inc
+ 
+ EXTRA_DIST += zbar.ico zbar.nsi
+ 
