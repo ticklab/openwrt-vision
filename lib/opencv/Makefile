@@ -25,6 +25,7 @@ CMAKE_INSTALL:=1
 CMAKE_BINARY_SUBDIR:=build
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
+PKG_USE_NINJA:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -43,7 +44,7 @@ define Package/opencv
   CATEGORY:=Libraries
   TITLE:=OpenCV
   URL:=https://opencv.org/
-  DEPENDS:=+libpthread +librt +libatomic +libstdcpp +zlib +libjpeg
+  DEPENDS:=+libpthread +librt +libatomic +libstdcpp +zlib +libjpeg +libv4l
 endef
 
 CMAKE_OPTIONS += \
@@ -54,7 +55,7 @@ CMAKE_OPTIONS += \
 	-DBUILD_opencv_videostab:BOOL=OFF \
 	-DWITH_FFMPEG:BOOL=OFF \
 	-DWITH_GSTREAMER:BOOL=OFF \
-	-DWITH_LIBV4L:BOOL=OFF \
+	-DWITH_LIBV4L:BOOL=ON \
 	-DWITH_PNG:BOOL=OFF \
 	-DWITH_GTK:BOOL=OFF \
 	-DWITH_TIFF:BOOL=OFF \
